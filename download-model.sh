@@ -10,15 +10,14 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
-# Script variables
-readonly MODEL_DIR="./models"
+source ./config.sh
 readonly MODEL_URL=$1
+readonly MODEL_NAME=$(basename "$MODEL_URL")
 
-# Function to download model
-download_model() {
-    mkdir -p "$MODEL_DIR"
+mkdir -p "$MODEL_DIR"
+
+if [[ -f "$MODEL_DIR/$MODEL_NAME" ]]; then
+    echo "Model file $MODEL_NAME already exists, skipping download."
+else
     wget -P "$MODEL_DIR" "$MODEL_URL"
-}
-
-# Main script logic
-download_model
+fi

@@ -14,7 +14,12 @@ set -o pipefail
 
 # Function to clone and compile llama.cpp
 compile_llamacpp() {
-    git clone https://github.com/ggerganov/llama.cpp.git
+    # check if folder exists before cloning
+    if [[ -d llama.cpp ]]; then
+        echo "llama.cpp already exists, skipping clone."
+    else
+        git clone https://github.com/ggerganov/llama.cpp.git
+    fi
     cd llama.cpp || exit 1
     make LLAMA_CUBLAS=1 -j
 }

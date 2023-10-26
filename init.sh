@@ -10,7 +10,6 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
-# Source configuration file
 source ./config.sh
 
 # Download model
