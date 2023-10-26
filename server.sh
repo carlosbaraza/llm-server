@@ -17,4 +17,5 @@ cd ~/llm-server/llama.cpp || exit 1
 ./server \
     -t "$LLAMA_THREADS" \
     -m "$LLAMA_MODEL_PATH" \
-    --n-gpu-layers "$LLAMA_GPU_LAYERS"
+    --n-gpu-layers "$LLAMA_GPU_LAYERS" \
+    --host "$LLAMA_HOST"
