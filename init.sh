@@ -12,7 +12,7 @@ set -o pipefail
 
 source ./config.sh
 
-cd ~
+cd ~/llm-server || exit 1
 
 # Download model
 ./download-model.sh "$MODEL_URL"
