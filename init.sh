@@ -12,6 +12,8 @@ set -o pipefail
 
 source ./config.sh
 
+cd ~
+
 # Download model
 ./download-model.sh "$MODEL_URL"
 

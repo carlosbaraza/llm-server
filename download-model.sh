@@ -10,6 +10,8 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
+cd ~/llm-server || exit 1
+
 source ./config.sh
 readonly MODEL_URL=$1
 readonly MODEL_NAME=$(basename "$MODEL_URL")

@@ -12,6 +12,8 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
+cd ~/llm-server || exit 1
+
 # Function to clone and compile llama.cpp
 compile_llamacpp() {
     # check if folder exists before cloning

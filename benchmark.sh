@@ -14,7 +14,7 @@ set -o pipefail
 LLAMA_THREADS=${LLAMA_THREADS:-4}
 LLAMA_GPU_LAYERS=${LLAMA_GPU_LAYERS:-35}
 
-cd llama.cpp || exit 1
+cd ~/llm-server/llama.cpp || exit 1
 
 # Main script logic
 ./main \
