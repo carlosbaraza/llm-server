@@ -11,6 +11,7 @@ set -o nounset
 set -o pipefail
 
 export BASE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$BASE_PATH" || exit 1
 source ./config.sh
 ./download-model.sh
 
