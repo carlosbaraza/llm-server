@@ -10,9 +10,7 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
-# Default settings
-LLAMA_THREADS=${LLAMA_THREADS:-4}
-LLAMA_GPU_LAYERS=${LLAMA_GPU_LAYERS:-35}
+source ./config.sh
 
 cd ~/llm-server/llama.cpp || exit 1
 
