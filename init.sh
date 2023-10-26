@@ -10,15 +10,11 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
+export BASE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source ./config.sh
-
-cd ~/llm-server || exit 1
 
 # Download model
 ./download-model.sh "$MODEL_URL"
 
 # Compile llama.cpp
 ./compile-llamacpp.sh
-
-# Run benchmark
-./benchmark.sh

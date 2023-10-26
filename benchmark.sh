@@ -10,10 +10,11 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
-# Default settings
+export BASE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source ./config.sh
+./download-model.sh
 
-cd ~/llm-server/llama.cpp || exit 1
+cd ./llama.cpp || exit 1
 
 # Main script logic
 ./main \

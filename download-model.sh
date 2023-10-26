@@ -10,11 +10,8 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
-cd ~/llm-server || exit 1
-
+export BASE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source ./config.sh
-readonly MODEL_URL=$1
-readonly MODEL_NAME=$(basename "$MODEL_URL")
 
 mkdir -p "$MODEL_DIR"
 
