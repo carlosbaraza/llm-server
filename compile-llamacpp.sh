@@ -15,6 +15,8 @@ set -o pipefail
 export BASE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$BASE_PATH" || exit 1
 source ./config.sh
+mkdir -p ./volume
+cd ./volume || exit 1
 
 # Function to clone and compile llama.cpp
 compile_llamacpp() {

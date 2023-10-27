@@ -7,8 +7,6 @@ WORKDIR /root
 COPY . ${BASE_PATH}
 RUN chmod 755 ${BASE_PATH}/*.sh
 
-RUN "${BASE_PATH}/compile-llamacpp.sh"
-
 EXPOSE 8080
 
 ENTRYPOINT [ "/root/llm-server/server.sh" ]

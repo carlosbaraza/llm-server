@@ -13,9 +13,10 @@ set -o pipefail
 export BASE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$BASE_PATH" || exit 1
 source ./config.sh
+./compile-llamacpp.sh
 ./download-model.sh
 
-cd ./llama.cpp || exit 1
+cd ./volume/llama.cpp || exit 1
 
 # Main script logic
 ./main \
